@@ -12,10 +12,10 @@ spam-detector-project/
 ├── frontend/
 │   ├── index.html              ← Landing page
 │   ├── css/
-│   │   └── style.css           ← All styles (dark terminal theme)
+│   │   └── style.css           
 │   ├── js/
 │   │   ├── main.js             ← Index page interactions
-│   │   ├── classifier.js       ← Simulated SVM + Naïve Bayes (browser)
+│   │   ├── classifier.js       ← Simulated SVM + Naïve Bayes 
 │   │   ├── urlscanner.js       ← 10-factor URL threat analysis
 │   │   └── chatbot.js          ← Chat UI controller
 │   └── pages/
@@ -26,9 +26,9 @@ spam-detector-project/
 │   ├── spam_detector.py        ← Python CLI with real trained models
 │   └── requirements.txt
 ├── dataset/
-│   └── Book2.csv               ← Your spam/ham CSV (add this yourself)
+│   └── Book2.csv               ← spam/ham CSV 
 ├── docs/
-│   └── screenshots/            ← Add screenshots here
+│   └── screenshots/            
 └── README.md
 ```
 
