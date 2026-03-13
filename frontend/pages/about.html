@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpamShield — About</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo"><span class="logo-icon">⬡</span> SpamShield</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="registration.html">Register</a></li>
+      <li><a href="chatbot.html" class="nav-cta">Launch Detector →</a></li>
+    </ul>
+  </nav>
+
+  <div class="about-page">
+    <h1>How SpamShield Works</h1>
+    <p class="tagline">// dual-model ensemble · url threat analysis · real-time classification</p>
+
+    <div class="about-section">
+      <h2>01 — The Problem</h2>
+      <p>Spam and phishing attacks cost individuals and organizations billions annually. Traditional rule-based filters miss novel attacks. SpamShield uses <strong>two complementary machine learning models</strong> that cover each other's weaknesses through ensemble voting.</p>
+    </div>
+
+    <div class="about-section">
+      <h2>02 — The ML Models</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>⚡ Support Vector Machine (SVM)</h3>
+          <p>A linear kernel SVM trained on TF-IDF bigram features. SVMs find the optimal hyperplane that separates spam from ham with maximum margin — making them robust to overfitting and excellent at generalizing to unseen spam patterns.</p>
+        </div>
+        <div class="about-card">
+          <h3>🧠 Naïve Bayes (MultinomialNB)</h3>
+          <p>A probabilistic classifier using Bayes' theorem with the naïve independence assumption. Fast, interpretable, and particularly strong at catching keyword-heavy spam. Laplace smoothing (α=0.1) handles unseen words gracefully.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-section">
+      <h2>03 — Ensemble Voting</h2>
+      <p>Both models independently classify every message. If they <strong>agree</strong>, the confidence score is the average of both. If they <strong>disagree</strong>, SVM wins as the tiebreaker (it typically performs better on text classification tasks), but the confidence is reduced to flag the uncertainty.</p>
+    </div>
+
+    <div class="about-section">
+      <h2>04 — URL Threat Scanner</h2>
+      <p>Every URL found in the input is scored across 10 risk factors:</p>
+      <table class="url-table">
+        <thead>
+          <tr><th>Check</th><th>Risk Points</th><th>Level</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>IP address instead of domain</td><td>+35</td><td class="risk-high">HIGH</td></tr>
+          <tr><td>Typosquatting detected</td><td>+40</td><td class="risk-high">HIGH</td></tr>
+          <tr><td>@ symbol in URL (redirect trick)</td><td>+30</td><td class="risk-high">HIGH</td></tr>
+          <tr><td>Suspicious TLD (.xyz, .tk, .ml …)</td><td>+25</td><td class="risk-medium">MED</td></tr>
+          <tr><td>Phishing keywords in URL</td><td>+10 each</td><td class="risk-medium">MED</td></tr>
+          <tr><td>Excessive subdomains (&gt;3 levels)</td><td>+20</td><td class="risk-medium">MED</td></tr>
+          <tr><td>URL shortener detected</td><td>+20</td><td class="risk-medium">MED</td></tr>
+          <tr><td>No HTTPS (plain HTTP)</td><td>+15</td><td class="risk-medium">MED</td></tr>
+          <tr><td>Unusually long URL (&gt;100 chars)</td><td>+10</td><td class="risk-low">LOW</td></tr>
+          <tr><td>Recognized trusted domain</td><td>−40</td><td class="risk-low">REDUCES RISK</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="about-section">
+      <h2>05 — Tech Stack</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Backend (Python)</h3>
+          <p>scikit-learn · pandas · NLTK · TF-IDF vectorizer · SVC + MultinomialNB · urllib.parse</p>
+        </div>
+        <div class="about-card">
+          <h3>Frontend (Vanilla JS)</h3>
+          <p>Zero dependencies · Regex URL extraction · Weighted keyword scoring · Real-time UI</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>SpamShield · <a href="../index.html">Home</a> · <a href="chatbot.html">Detector</a></p>
+  </footer>
+</body>
+</html>

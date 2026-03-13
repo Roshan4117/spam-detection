@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpamShield — AI Spam & Phishing Detector</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon">⬡</span> SpamShield
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="pages/about.html">About</a></li>
+      <li><a href="pages/registration.html">Register</a></li>
+      <li><a href="pages/chatbot.html" class="nav-cta">Launch Detector →</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="hero-inner">
+      <div class="pill">🔬 Dual-Model AI Engine</div>
+      <h1 class="hero-title">
+        Stop Spam.<br>
+        <span class="gradient-text">Expose Phishing.</span>
+      </h1>
+      <p class="hero-sub">
+        Powered by <strong>Support Vector Machine</strong> + <strong>Naïve Bayes</strong> ensemble 
+        with real-time URL threat analysis. Paste any message or link — know the truth instantly.
+      </p>
+      <div class="hero-actions">
+        <a href="pages/chatbot.html" class="btn-primary">
+          <span>Analyze Now</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="pages/about.html" class="btn-ghost">How it works</a>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-num">2</div>
+          <div class="stat-label">ML Models</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">URL Risk Checks</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-num">Real‑time</div>
+          <div class="stat-label">Analysis</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature cards -->
+    <div class="feature-strip">
+      <div class="feature-card">
+        <div class="fc-icon">⚡</div>
+        <div class="fc-title">SVM Classifier</div>
+        <div class="fc-desc">Linear kernel SVM trained on TF-IDF bigrams for high-precision spam detection</div>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon">🧠</div>
+        <div class="fc-title">Naïve Bayes</div>
+        <div class="fc-desc">Probabilistic classification with Laplace smoothing for fast, interpretable results</div>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon">🔗</div>
+        <div class="fc-title">URL Threat Scanner</div>
+        <div class="fc-desc">Detects phishing, typosquatting, IP-based URLs, shorteners & suspicious TLDs</div>
+      </div>
+      <div class="feature-card">
+        <div class="fc-icon">🛡️</div>
+        <div class="fc-title">Ensemble Voting</div>
+        <div class="fc-desc">Both models vote — SVM breaks ties. Confidence score shows how certain we are</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>SpamShield · Built with Python, scikit-learn &amp; vanilla JS · <a href="pages/about.html">About</a></p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

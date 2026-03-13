@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpamShield — Register</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo"><span class="logo-icon">⬡</span> SpamShield</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="registration.html" class="active">Register</a></li>
+      <li><a href="chatbot.html" class="nav-cta">Launch Detector →</a></li>
+    </ul>
+  </nav>
+
+  <div class="reg-page">
+    <div class="reg-container">
+      <div style="text-align:center;margin-bottom:2rem">
+        <div style="font-size:2rem;margin-bottom:0.5rem">⬡</div>
+        <h1 style="font-size:1.6rem;font-weight:800;letter-spacing:-0.02em">SpamShield</h1>
+        <p style="font-size:0.78rem;color:var(--muted);font-family:var(--mono);margin-top:0.3rem">Join the fight against spam</p>
+      </div>
+
+      <div class="reg-toggle">
+        <button class="toggle-btn active" onclick="showPanel('login',this)">Sign In</button>
+        <button class="toggle-btn" onclick="showPanel('register',this)">Create Account</button>
+      </div>
+
+      <!-- LOGIN -->
+      <div class="reg-card active" id="panel-login">
+        <h2>Welcome back</h2>
+        <p>Sign in to your SpamShield account</p>
+        <div class="social-row">
+          <a class="social-btn" href="https://twitter.com/i/flow/login" target="_blank">𝕏 Twitter</a>
+          <a class="social-btn" href="https://in.linkedin.com/" target="_blank">in LinkedIn</a>
+          <a class="social-btn" href="https://www.instagram.com/accounts/login/" target="_blank">◎ Instagram</a>
+        </div>
+        <div class="reg-divider"><span>or continue with email</span></div>
+        <div class="form-field">
+          <label>EMAIL ADDRESS</label>
+          <input type="email" placeholder="you@example.com">
+        </div>
+        <div class="form-field">
+          <label>PASSWORD</label>
+          <input type="password" placeholder="••••••••">
+        </div>
+        <button class="form-submit" onclick="handleLogin()">Sign In →</button>
+      </div>
+
+      <!-- REGISTER -->
+      <div class="reg-card" id="panel-register">
+        <h2>Create account</h2>
+        <p>Start detecting spam in seconds</p>
+        <div class="social-row">
+          <a class="social-btn" href="https://twitter.com/i/flow/login" target="_blank">𝕏 Twitter</a>
+          <a class="social-btn" href="https://in.linkedin.com/" target="_blank">in LinkedIn</a>
+          <a class="social-btn" href="https://www.instagram.com/accounts/login/" target="_blank">◎ Instagram</a>
+        </div>
+        <div class="reg-divider"><span>or use email</span></div>
+        <div class="form-field">
+          <label>FULL NAME</label>
+          <input type="text" placeholder="Your Name">
+        </div>
+        <div class="form-field">
+          <label>EMAIL ADDRESS</label>
+          <input type="email" placeholder="you@example.com">
+        </div>
+        <div class="form-field">
+          <label>PASSWORD</label>
+          <input type="password" placeholder="Min. 8 characters">
+        </div>
+        <button class="form-submit" onclick="handleRegister()">Create Account →</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showPanel(name, btn) {
+      document.querySelectorAll('.reg-card').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('panel-' + name).classList.add('active');
+      btn.classList.add('active');
+    }
+    function handleLogin() {
+      alert('Login functionality requires backend integration. See backend/app.py');
+    }
+    function handleRegister() {
+      alert('Registration requires backend integration. See backend/app.py');
+    }
+  </script>
+</body>
+</html>
